@@ -1,5 +1,7 @@
 #!/bin/bash
 
+chmod -x
+
 #Find all your wallpapers
 DIR="/usr/share/backgrounds/*"
 
