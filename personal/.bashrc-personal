@@ -1,0 +1,13 @@
+#
+# ~/.bashrc
+#
+
+alias gc="git clone"
+
+alias gitpull="find . -maxdepth 3 -name .git -type d | rev | cut -c 6- | rev | xargs -I {} git -C {} pull"
+
+alias vbmessage='VBoxManage setextradata global GUI/SuppressMessages "all"'
+
+alias scr='scrot -d 3 -c ~/Pictures/Scrot-$(date +%Y.%m.%d-%H.%M.%S).jpg'
+
+alias personalroot='sudo cp -Rf /personal-root/* /'

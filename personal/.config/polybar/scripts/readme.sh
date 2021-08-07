@@ -1,0 +1,1 @@
+groff -mom readme.first -Tpdf | zathura -
