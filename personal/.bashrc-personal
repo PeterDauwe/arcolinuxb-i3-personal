@@ -18,3 +18,4 @@ alias perroot='sudo cp -Rf /personal-root/* /'
 
 alias per1='sudo chmod -R 755 /personal-extra/* && cp -Rf /personal-extra/* ~'
 alias per2='sudo chmod -R 755 /personal-root/* && cp -Rf /personal-root/* ~'
+
