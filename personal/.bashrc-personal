@@ -12,10 +12,6 @@ alias vbmessage='VBoxManage setextradata global GUI/SuppressMessages "all"'
 alias scr='scrot -d 3 -c ~/Pictures/Scrot-$(date +%Y.%m.%d-%H.%M.%S).jpg'
 
 
-alias per='cp -Rf /personal/* ~'
-
-alias perroot='sudo cp -Rf /personal-root/* /'
-
 alias per1='sudo chmod -R 755 /personal-extra/* && cp -Rf /personal-extra/* ~'
 alias per2='sudo chmod -R 755 /personal-root/* && cp -Rf /personal-root/* ~'
 
