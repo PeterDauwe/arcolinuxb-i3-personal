@@ -26,6 +26,6 @@ alias vbmessage='VBoxManage setextradata global GUI/SuppressMessages "all"'
 alias scr='xdotool windowminimize $(xdotool getactivewindow) && scrot -d 3 -c ~/Pictures/Scrot-$(date +%Y.%m.%d-%H.%M.%S).jpg' 
 
 
-alias per='cp -af /personal/* ~'
 
-alias perroot='sudo cp -af /personal-root/* /'
+alias personal-home='sudo chmod -R 755 /personal-home/* && cp -Rf /personal-home/* ~'
+alias personal-root='sudo chmod -R 755 /personal-root/* && sudo cp -Rf /personal-root/* /'
