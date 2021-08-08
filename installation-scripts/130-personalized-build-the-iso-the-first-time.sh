@@ -155,6 +155,15 @@ echo
     fi
 ############################################################################
 # Added personalized########################################################
+	echo "Adding the content of the /personal-home folder"
+	echo
+	cp -rf ../personal-home/ ../work/archiso/airootfs/
+	if test -f ../work/archiso/airootfs/personal-home/.gitkeep ; then
+		echo ".gitkeep is now removed"
+		echo
+		rm ../work/archiso/airootfs/personal-home/.gitkeep
+    fi
+
 	echo "Adding the content of the /personal-root folder"
 	echo
 	cp -rf ../personal-root/ ../work/archiso/airootfs/
@@ -163,6 +172,8 @@ echo
 		echo
 		rm ../work/archiso/airootfs/personal-root/.gitkeep
     fi
+
+
 ############################################################################
 ############################################################################
 
