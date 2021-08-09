@@ -14,6 +14,22 @@
 #   DO NOT JUST RUN THIS. EXAMINE AND JUDGE. RUN AT YOUR OWN RISK.
 #
 ##################################################################################################################
+SECONDS=0
+
+sound() {
+  # plays sounds in sequence and waits for them to finish
+  for s in $@; do
+    paplay $s
+  done
+}
+sn1() {
+  sound /usr/share/sounds/freedesktop/stereo/complete.oga
+}
+sn2() {
+  sound /usr/share/sounds/freedesktop/stereo/suspend-error.oga
+}
+
+
 echo
 echo "################################################################## "
 tput setaf 2
@@ -63,6 +79,8 @@ echo
 	echo "or update your system"
 	echo "###################################################################################################"
 	tput sgr0
+	sn2
+	exit 1
 	fi
 
 echo
@@ -328,7 +346,22 @@ echo
 	echo "Moving pkglist.x86_64.txt"
 	echo "########################"
 	cp $buildFolder/iso/arch/pkglist.x86_64.txt  $outFolder/$isoLabel".pkglist.txt"
-	
+
+
+
+	if (( $SECONDS > 3600 )) ; then
+    let "hours=SECONDS/3600"
+    let "minutes=(SECONDS%3600)/60"
+    let "seconds=(SECONDS%3600)%60"
+    echo "Completed in $hours hour(s), $minutes minute(s) and $seconds second(s)" 
+elif (( $SECONDS > 60 )) ; then
+    let "minutes=(SECONDS%3600)/60"
+    let "seconds=(SECONDS%3600)%60"
+    echo "Completed in $minutes minute(s) and $seconds second(s)"
+else
+    echo "Completed in $SECONDS seconds"
+fi
+	sn1
 echo
 echo "##################################################################"
 tput setaf 2

@@ -44,20 +44,21 @@ echo
 
 	desktop="i3"
 	dmDesktop="i3"
+	date_mybuild=$(date +%y)-$(date +%m)-$(date +%d)
+	#original =  y$(date +%y).m$(date +%m).d$(date +%d)
+	arcoboboVersion=$date_mybuild
 
-	arcolinuxVersion='v21.09.8'
-
-	isoLabel='arcolinuxb-'$desktop'-'$arcolinuxVersion'-x86_64.iso'
+	isoLabel='arcobobo-'$desktop'-'$arcoboboVersion'-x86_64.iso'
 
 	# setting of the general parameters
 	archisoRequiredVersion="archiso 57-2"
-	buildFolder=$HOME"/arcolinuxb-build"
-	outFolder=$HOME"/ArcoLinuxB-Out"
+	buildFolder=$HOME"/arcobobo-build"
+	outFolder=$HOME"/ArcoBobo-Out"
 	archisoVersion=$(sudo pacman -Q archiso)
 
 	echo "################################################################## "
 	echo "Building the desktop                   : "$desktop
-	echo "Building version                       : "$arcolinuxVersion
+	echo "Building version                       : "$arcoboboVersion
 	echo "Iso label                              : "$isoLabel
 	echo "Do you have the right archiso version? : "$archisoVersion
 	echo "What is the required archiso version?  : "$archisoRequiredVersion
@@ -253,17 +254,17 @@ echo
 
 	#profiledef.sh
 	oldname1='iso_name="arcolinuxl'
-	newname1='iso_name="arcolinuxb-'$desktop
+	newname1='iso_name="arcobobo-'$desktop
 
 	oldname2='iso_label="arcolinuxl'
-	newname2='iso_label="arcolinuxb-'$desktop
+	newname2='iso_label="arcobobo-'$desktop
 
 	oldname3='ArcoLinuxL'
-	newname3='ArcoLinuxB-'$desktop
+	newname3='ArcoBobo-'$desktop
 
 	#hostname
 	oldname4='ArcoLinuxL'
-	newname4='ArcoLinuxB-'$desktop
+	newname4='ArcoBobo-'$desktop
 
 	#sddm.conf user-session
 	oldname5='Session=xfce'
