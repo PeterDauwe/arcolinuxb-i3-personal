@@ -207,16 +207,15 @@ echo
 	echo "Removing the old packages.x86_64 file from build folder"
 	rm $buildFolder/archiso/packages.x86_64
 	echo
+	echo "Copying the new packages.x86_64 file to the build folder"
+	cp -f ../archiso/packages.x86_64 $buildFolder/archiso/packages.x86_64
 
 ##########################################################################################
 #Added personal.x86_64 to append into packages.x86_64#####################################
-    echo "Copying the extra software from personalsoftware.x86_64 into packages.x86_64"
-      cat ../archiso/personalsoftware.x86_64 >> ../archiso/packages.x86_64
+    cat ../archiso/personalsoftware.x86_64 >> $buildFolder/archiso/packages.x86_64
 ##########################################################################################
 ##########################################################################################
 
-	echo "Copying the new packages.x86_64 file to the build folder"
-	cp -f ../archiso/packages.x86_64 $buildFolder/archiso/packages.x86_64
 	echo
 	echo "Changing group for polkit folder"
 	sudo chgrp polkitd $buildFolder/archiso/airootfs/etc/polkit-1/rules.d
