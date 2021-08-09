@@ -44,11 +44,11 @@ echo
 
 	desktop="i3"
 	dmDesktop="i3"
-	date_mybuild=$(date +%y)-$(date +%m)-$(date +%d)
+	date_mybuild=y$(date +%y).m$(date +%m).d$(date +%d)
 	#original =  y$(date +%y).m$(date +%m).d$(date +%d)
-	arcoboboVersion=$date_mybuild
+	arcolinuxVersion=$date_mybuild
 
-	isoLabel='arcobobo-'$desktop'-'$arcoboboVersion'-x86_64.iso'
+	isoLabel='arcobobo-'$desktop'-'$arcolinuxVersion'-x86_64.iso'
 
 	# setting of the general parameters
 	archisoRequiredVersion="archiso 57-2"
@@ -58,7 +58,7 @@ echo
 
 	echo "################################################################## "
 	echo "Building the desktop                   : "$desktop
-	echo "Building version                       : "$arcoboboVersion
+	echo "Building version                       : "$arcolinuxVersion
 	echo "Iso label                              : "$isoLabel
 	echo "Do you have the right archiso version? : "$archisoVersion
 	echo "What is the required archiso version?  : "$archisoRequiredVersion
@@ -234,6 +234,14 @@ echo
     cat ../archiso/personalsoftware.x86_64 >> $buildFolder/archiso/packages.x86_64
 ##########################################################################################
 ##########################################################################################
+
+echo "Removing the old profiledef.sh file from build folder"
+	rm $buildFolder/archiso/profiledef.sh
+	echo
+	echo "Copying the new profiledef.sh file to the build folder"
+	cp -f ../archiso/profiledef.sh $buildFolder/archiso/profiledef.sh
+	echo
+
 
 	echo
 	echo "Changing group for polkit folder"
