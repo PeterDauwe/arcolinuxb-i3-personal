@@ -211,7 +211,7 @@ echo
 ##########################################################################################
 #Added personal.x86_64 to append into packages.x86_64#####################################
     echo "Copying the extra software from personalsoftware.x86_64 into packages.x86_64"
-    cat ../archiso/personalsoftware.x86_64 >> ../archiso/packages.x86_64
+      cat ../archiso/personalsoftware.x86_64 >> ../archiso/packages.x86_64
 ##########################################################################################
 ##########################################################################################
 
