@@ -17,3 +17,5 @@ alias personal-root='sudo chmod -R 755 /personal-root/* && sudo cp -Rf /personal
 
 
 alias dubois='youtube-dl -f best -citw -v https://www.youtube.com/c/ErikDubois'
+
+alias edubois='youtube-dl --download-archive ~/Videos/_AAAdownloaded.txt -f best -citw -v https://www.youtube.com/ErikDubois'
