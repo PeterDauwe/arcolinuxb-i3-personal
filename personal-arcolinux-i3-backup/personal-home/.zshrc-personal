@@ -1,0 +1,31 @@
+#
+# ~/.zsh
+#
+
+(cat "$HOME/.cache/wal/sequences" &)
+
+#git clone
+alias gc="git clone"
+
+alias gitpull="find . -maxdepth 3 -name .git -type d | rev | cut -c 6- | rev | xargs -I {} git -C {} pull"
+
+gitpush() {
+    git pull
+    git add -u
+    git add --all .
+    input="update"
+    git commit -m "$input"
+    git push --force -u origin master
+}
+alias gp=gitpush
+
+
+#No messages in virtualbox
+alias vbmessage='VBoxManage setextradata global GUI/SuppressMessages "all"'
+
+alias scr='xdotool windowminimize $(xdotool getactivewindow) && scrot -d 3 -c ~/Pictures/Scrot-$(date +%Y.%m.%d-%H.%M.%S).jpg' 
+
+
+
+alias personal-home='sudo chmod -R 755 /personal-home/* && cp -Rf /personal-home/* ~'
+alias personal-root='sudo chmod -R 755 /personal-root/* && sudo cp -Rf /personal-root/* /'

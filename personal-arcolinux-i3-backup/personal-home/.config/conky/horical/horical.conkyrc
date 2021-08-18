@@ -1,0 +1,62 @@
+conky.config = {
+	
+	class_g = 'Conky',
+
+	background = true,
+	double_buffer = true,
+	no_buffers = true,
+	text_buffer_size = 2048,
+	update_interval = 1,
+	alignment = 'top_middle',
+	gap_x = 0,
+	gap_y = 50,
+-- #	minimum_width = 1300, minimum_height = 125,
+-- #	maximum_width = 1300,
+	border_inner_margin = 0,
+	border_outer_margin = 0,
+	
+	override_utf8_locale = true,
+	use_xft = true,
+	font = 'UBUNTU Mono:Regular:size=14',
+	xftalpha = 1,
+	uppercase = false,
+	default_color = white,
+	update_interval = 30,
+	
+shadow = false,
+
+
+    own_window = true,
+    own_window_transparent = true,
+    own_window_argb_visual = true,
+    own_window_class = 'Conky',
+    own_window_type = 'override',
+    
+
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	cpu_avg_samples = 2,
+	net_avg_samples = 2,
+
+
+	total_run_times = 0,
+
+
+
+	draw_borders = false,
+
+ --# use_spacer = false,
+ draw_shades = false,
+ draw_outline = false,
+ draw_graph_borders = false,
+ border_outer_margin = 0,
+
+
+
+ imlib_cache_size = 0 ,
+
+};
+
+
+conky.text = [[
+$color${execpi 36000 ~/.config/conky/horical/res/horical}${color}
+]];

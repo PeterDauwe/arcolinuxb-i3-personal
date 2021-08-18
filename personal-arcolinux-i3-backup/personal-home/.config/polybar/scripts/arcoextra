@@ -1,0 +1,10 @@
+#!/bin/bash
+
+SDIR="$HOME/.config/polybar/scripts"
+MENU="$(rofi -sep "|" -dmenu -i -p 'ArcoLinux Extra's  -hide-scrollbar -padding 20 -line-padding 4 -width 40 -lines 4 <<< "ArcoLinux Hello|ArcoLinux Welcome|ArcoLinux Tweak Tool|ArcoLinux Fast Track")"
+            case "$MENU" in
+				*Hello) $SDIR/usermods.sh -Hello ;;
+				*Welcome) $SDIR/usermods.sh -Welcome ;;
+				*Tool) $SDIR/usermods.sh -Tool ;;
+				*Track) $SDIR/usermods.sh -Track ;;
+            esac

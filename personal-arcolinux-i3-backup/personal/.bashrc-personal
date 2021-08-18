@@ -1,0 +1,21 @@
+#
+# ~/.bashrc
+#
+
+
+alias gc="git clone"
+
+alias gitpull="find . -maxdepth 3 -name .git -type d | rev | cut -c 6- | rev | xargs -I {} git -C {} pull"
+
+alias vbmessage='VBoxManage setextradata global GUI/SuppressMessages "all"'
+
+alias scr='scrot -d 3 -c ~/Pictures/Scrot-$(date +%Y.%m.%d-%H.%M.%S).jpg'
+
+
+alias personal-home='sudo chmod -R 755 /personal-home/* && cp -Rf /personal-home/* ~'
+alias personal-root='sudo chmod -R 755 /personal-root/* && sudo cp -Rf /personal-root/* /'
+
+
+alias dubois='youtube-dl -f best -citw -v https://www.youtube.com/c/ErikDubois'
+
+alias edubois='youtube-dl --download-archive ~/Videos/_AAAdownloaded.txt -f best -citw -v https://www.youtube.com/ErikDubois'
