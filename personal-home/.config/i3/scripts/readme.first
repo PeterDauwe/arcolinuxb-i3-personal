@@ -3,7 +3,7 @@
 .SHIFT_LIST 10p
 ..
 .PARA_SPACE 1m
-.TITLE "\s+(10ArcoBobo -\s0 \s+5a spinoff from Arcolinux!\s0"
+.TITLE "\s+(10A Twist-Off from ArcolinuxB-i3!\s0"
 .AUTHOR "\s+5Peter Dauwe\s0"
 .DOCTYPE    DEFAULT
 .COPYSTYLE  FINAL
@@ -33,11 +33,24 @@ I used polybar and most items are left-click to open. Use and explore.
 Not all keybindings that were created by ArcoLinux are still here. Some were re-used. Most new-ones are explained in this document.
 .ITEM
 \fBAdaptation\fP \(en
-This system is a little adaptation and a simple use of how a script can change the whole lookout of an Arcolinux-i3 distribution.
+This system is a little adaptation and a simple use of some commands can change the whole lookout of an Arcolinux-i3 distribution. 
 .LIST OFF
 .HEADING 1 "Key Bindings"
 I will not go over all the keybindings. These can be found in the \f(CW.config/i3/config\fP file.
 You can always change these to your liking. Learn the basic commands and you will start to enjoy this system.
+.HEADING 1 "Terminal Commands to do."
+.LI
+.ITEM
+\f(CW In a terminal type : personal\fP \(en Copy a bashrc-personal to your system.
+.ITEM
+\f(CW In a terminal type : cb\fP \(en To make sure that .bashrc-personal is active.
+.ITEM
+\f(CW In a terminal type : personal-home\fP \(en This will copy all from  /personal-home to the users directory (.config , .cache.....) Alias personal-home='sudo chmod -R 755 /personal-home/* && cp -Rf /personal-home/* ~'
+.ITEM
+\f(CW In a terminal type : personal-root\fP \(en This will copy all from  /personal-root to the root directories (usr , etc.....) Alias personal-root='sudo chmod -R 755 /personal-root/* && sudo cp -Rf /personal-root/* /'
+
+It is now up to you to change the personal-home and personakl-root to your likings.
+
 .HEADING 2 "Basic keybindings"
 .LI
 .ITEM
@@ -103,7 +116,7 @@ There are ten workspaces, indicated by polybar on the top or the xfce-bar on the
 .LIST OFF
 .HEADING 1 "Contact"
 .PP
-Hope you enjoy this distribution. Arcolinux can not be held responsible in case of a problem with this adaptation. 
+Hope you enjoy this distribution. Arcolinux can not be held responsible in case of a problem with this "twist-Off". 
 .LI
 .ITEM
 .PDF_WWW_LINK "https://discordapp.com/invite/R2amEEz" "ArcoLinux Discord"
