@@ -25,7 +25,8 @@ alias vbmessage='VBoxManage setextradata global GUI/SuppressMessages "all"'
 
 alias scr='xdotool windowminimize $(xdotool getactivewindow) && scrot -d 3 -c ~/Pictures/Scrot-$(date +%Y.%m.%d-%H.%M.%S).jpg' 
 
-
-
 alias personal-home='sudo chmod -R 755 /personal-home/* && cp -Rf /personal-home/* ~'
 alias personal-root='sudo chmod -R 755 /personal-root/* && sudo cp -Rf /personal-root/* /'
+
+
+alias edubois='youtube-dl --download-archive ~/Videos/edubois.txt -f best -citw -v https://www.youtube.com/ErikDubois'
