@@ -16,4 +16,8 @@ alias personal-home='sudo chmod -R 755 /personal-home/* && cp -Rf /personal-home
 alias personal-root='sudo chmod -R 755 /personal-root/* && sudo cp -Rf /personal-root/* /'
 
 
+alias resetskel1='sudo chmod -R 755 /personal-reset/reset-home/* && cp -Rf /personal-reset/reset-home/* ~'
+alias resetskel2='sudo chmod -R 755 /personal-reset/reset-root/* && sudo cp -Rf /personal-reset/reset-root/* /'
+
+
 alias edubois='youtube-dl --download-archive ~/Videos/edubois.txt -f best -citw -v https://www.youtube.com/ErikDubois'
