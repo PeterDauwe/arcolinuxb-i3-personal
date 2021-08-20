@@ -49,7 +49,7 @@ You can always change these to your liking. Learn the basic commands and you wil
 .ITEM
 \f(CW In a terminal type : personal-root\fP \(en This will copy all from  /personal-root to the root directories (usr , etc.....) Alias personal-root='sudo chmod -R 755 /personal-root/* && sudo cp -Rf /personal-root/* /'
 
-It is now up to you to change the personal-home and personakl-root to your likings.
+It is now up to you to change the personal-home and personal-root to your likings.
 
 .HEADING 2 "Basic keybindings"
 .LI
