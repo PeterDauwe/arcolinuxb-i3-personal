@@ -4,7 +4,7 @@
 # Path to your oh-my-zsh installation.
 #installation via script from github
 #export ZSH="/home/$USER/.oh-my-zsh"
-#installation via yay -S oh-my-zsh-git
+#installation via paru -S oh-my-zsh-git
 export ZSH=/usr/share/oh-my-zsh/
 
 # Set name of the theme to load --- if set to "random", it will
@@ -19,7 +19,10 @@ ZSH_THEME="Lastbobo"
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
 # If set to an empty array, this variable will have no effect.
+
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+
+# ZSH_THEME_RANDOM_IGNORED=(pygmalion tjkirch_mod)
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -97,15 +100,8 @@ source $ZSH/oh-my-zsh.sh
 
 ####   ARCOLINUX SETTINGS   ####
 
-## Load zsh-syntax-highlighting; should be last.
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
-
-#source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-
-
 
 setopt GLOB_DOTS
 
@@ -114,13 +110,10 @@ setopt GLOB_DOTS
 
 export HISTCONTROL=ignoreboth:erasedups
 
-
-
 # Make nano the default editor
 
 export EDITOR='nano'
 export VISUAL='nano'
-
 
 #PS1='[\u@\h \W]\$ '
 
@@ -142,12 +135,12 @@ alias l.="ls -A | egrep '^\.'"
 #fix obvious typo's
 alias cd..='cd ..'
 alias pdw="pwd"
-alias udpate='sudo pacman -Syu'
-alias upate='sudo pacman -Syu'
-alias updte='sudo pacman -Syu'
-alias updqte='sudo pacman -Syu'
-alias upqll="yay -Syu --noconfirm"
-alias upal="yay -Syu --noconfirm"
+alias udpate='sudo pacman -Syyu'
+alias upate='sudo pacman -Syyu'
+alias updte='sudo pacman -Syyu'
+alias updqte='sudo pacman -Syyu'
+alias upqll="paru -Syu --noconfirm"
+alias upal="paru -Syu --noconfirm"
 
 ## Colorize the grep command output for ease of use (good for log files)##
 alias grep='grep --color=auto'
@@ -164,11 +157,11 @@ alias rmpacmanlock="sudo rm /var/lib/pacman/db.lck"
 #arcolinux logout unlock
 alias rmlogoutlock="sudo rm /tmp/arcologout.lock"
 
+#which graphical card is working
+alias whichvga="/usr/local/bin/arcolinux-which-vga"
+
 #free
 alias free="free -mt"
-
-#use all cores
-alias uac="sh ~/.bin/main/000*"
 
 #continue download
 alias wget="wget -c"
@@ -182,11 +175,11 @@ alias merge="xrdb -merge ~/.Xresources"
 # Aliases for software managment
 # pacman or pm
 alias pacman='sudo pacman --color auto'
-alias update='sudo pacman -Syu'
+alias update='sudo pacman -Syyu'
 
 # yay as aur helper - updates everything
-alias pksyua="yay -Syu --noconfirm"
-alias upall="yay -Syu --noconfirm"
+alias pksyua="paru -Syu --noconfirm"
+alias upall="paru -Syu --noconfirm"
 
 #ps
 alias psa="ps auxf"
@@ -213,7 +206,7 @@ alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
 alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
 
 #switch between lightdm and sddm
-alias tolightdm="sudo pacman -S lightdm lightdm-gtk-greeter --noconfirm --needed ; sudo systemctl enable lightdm.service -f ; echo 'Lightm is active - reboot now'"
+alias tolightdm="sudo pacman -S lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings --noconfirm --needed ; sudo systemctl enable lightdm.service -f ; echo 'Lightm is active - reboot now'"
 alias tosddm="sudo pacman -S sddm --noconfirm --needed ; sudo systemctl enable sddm.service -f ; echo 'Sddm is active - reboot now'"
 
 #quickly kill conkies
@@ -223,6 +216,7 @@ alias kc='killall conky'
 alias hw="hwinfo --short"
 
 #skip integrity check
+alias paruskip='paru -S --mflags --skipinteg'
 alias yayskip='yay -S --mflags --skipinteg'
 alias trizenskip='trizen -S --skipinteg'
 
@@ -271,6 +265,9 @@ alias iso="cat /etc/dev-rel | awk -F '=' '/ISO/ {print $2}'"
 #Cleanup orphaned packages
 alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
 
+#search content with ripgrep
+alias rg="rg --sort path"
+
 #get the error messages from journalctl
 alias jctl="journalctl -p 3 -xb"
 
@@ -282,10 +279,15 @@ alias ngrub="sudo $EDITOR /etc/default/grub"
 alias nconfgrub="sudo $EDITOR /boot/grub/grub.cfg"
 alias nmkinitcpio="sudo $EDITOR /etc/mkinitcpio.conf"
 alias nmirrorlist="sudo $EDITOR /etc/pacman.d/mirrorlist"
+alias narcomirrorlist='sudo nano /etc/pacman.d/arcolinux-mirrorlist'
 alias nsddm="sudo $EDITOR /etc/sddm.conf"
+alias nsddmk="sudo $EDITOR /etc/sddm.conf.d/kde_settings.conf"
 alias nfstab="sudo $EDITOR /etc/fstab"
 alias nnsswitch="sudo $EDITOR /etc/nsswitch.conf"
 alias nsamba="sudo $EDITOR /etc/samba/smb.conf"
+alias ngnupgconf="sudo nano /etc/pacman.d/gnupg/gpg.conf"
+alias nb="$EDITOR ~/.bashrc"
+alias nz="$EDITOR ~/.zshrc"
 
 #git clone
 alias gc="git clone"
@@ -314,9 +316,15 @@ alias gpg-retrieve="gpg2 --keyserver-options auto-key-retrieve --receive-keys"
 alias fix-gpg-retrieve="gpg2 --keyserver-options auto-key-retrieve --receive-keys"
 alias fix-key="[ -d ~/.gnupg ] || mkdir ~/.gnupg ; cp /etc/pacman.d/gnupg/gpg.conf ~/.gnupg/ ; echo 'done'"
 
+#fixes
+alias fix-permissions="sudo chown -R $USER:$USER ~/.config ~/.local"
+alias keyfix="/usr/local/bin/arcolinux-fix-pacman-databases-and-keys"
+alias fix-key="/usr/local/bin/arcolinux-fix-pacman-databases-and-keys"
+alias fix-sddm-config="/usr/local/bin/arcolinux-fix-sddm-config"
+
 #maintenance
 alias big="expac -H M '%m\t%n' | sort -h | nl"
-alias downgrada="sudo downgrade --ala-url https://bike.seedhost.eu/arcolinux/"
+alias downgrada="sudo downgrade --ala-url https://ant.seedhost.eu/arcolinux/"
 
 #systeminfo
 alias probe="sudo -E hw-probe -all -upload"
@@ -324,6 +332,12 @@ alias probe="sudo -E hw-probe -all -upload"
 #shutdown or reboot
 alias ssn="sudo shutdown now"
 alias sr="sudo reboot"
+
+#update betterlockscreen images
+alias bls="betterlockscreen -u /usr/share/backgrounds/arcolinux/"
+
+#give the list of all installed desktops - xsessions desktops
+alias xd="ls /usr/share/xsessions"
 
 # # ex = EXtractor for all kinds of archives
 # # usage: ex <file>
@@ -352,10 +366,44 @@ ex ()
   fi
 }
 
+#arcolinux applications
+alias att="arcolinux-tweak-tool"
+alias adt="arcolinux-desktop-trasher"
+alias abl="arcolinux-betterlockscreen"
+alias agm="arcolinux-get-mirrors"
+alias amr="arcolinux-mirrorlist-rank-info"
+alias aom="arcolinux-osbeck-as-mirror"
+alias ars="arcolinux-reflector-simple"
+alias atm="arcolinux-tellme"
+alias avs="arcolinux-vbox-share"
+alias awa="arcolinux-welcome-app"
+
+#remove
+alias rmgitcache="rm -r ~/.cache/git"
+
+#moving your personal files and folders from /personal to ~
+alias personal='cp -Rf /personal/* ~'
+
 #create a file called .zshrc-personal and put all your personal aliases
 #in there. They will not be overwritten by skel.
 
 [[ -f ~/.zshrc-personal ]] && . ~/.zshrc-personal
 
+# reporting tools - install when not installed
+# install neofetch
+#neofetch
+# install screenfetch
+#screenfetch
+# install ufetch-git
+#ufetch
+# install ufetch-arco-git
+#ufetch-arco
+# install arcolinux-paleofetch-git
+#paleofetch
+# install alsi
+#alsi
+# install arcolinux-bin-git - standard on ArcoLinux isos (or sfetch - smaller)
+#hfetch
+# install lolcat
+#sfetch | lolcat
 sfetch
-
