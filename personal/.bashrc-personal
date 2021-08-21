@@ -16,11 +16,14 @@ alias scr='scrot -d 3 -c ~/Pictures/Scrot-$(date +%Y.%m.%d-%H.%M.%S).jpg'
 #########################################################################################
 
 homesettings() {
-    sudo cp -Rf /boot/grub/themes/Vimix/background.png /personal-twist/standard-root/boot/grub/themes/Vimix/
+    sudo cp -Rf /boot/grub/themes/Vimix/theme.txt /personal-twist/standard-root/boot/grub/themes/Vimix/
     sudo cp -Rf /usr/share/icons/default/* /personal-twist/standard-root/usr/share/icons/default/
     sudo cp -Rf ~/.config/gtk*3.0/settings.ini /personal-twist/standard-home/.config/gtk-3.0/*
-    sudo cp -Rf ~/.config/arcologout/* /personal-twist/standard-home/.config/arcologout/
+        sudo cp -Rf ~/.config/arcologout/* /personal-twist/standard-home/.config/arcologout/
     sudo cp -Rf /etc/sddm.conf /personal-twist/standard-root/etc/
+    
+
+
     sudo chmod -R 755 /personal-twist/personal-home/* 
     cp -Rf /personal-twist/personal-home/* ~ 
     sudo chmod -R 755 /personal-twist/personal-root/* 
