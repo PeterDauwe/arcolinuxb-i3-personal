@@ -28,15 +28,36 @@ alias scr='xdotool windowminimize $(xdotool getactivewindow) && scrot -d 3 -c ~/
 #########################################################################################
 ##### This will copy all your personal settings into place ##############################
 #########################################################################################
-alias home='sudo chmod -R 755 /personal-twist/personal-home/* && cp -Rf /personal-twist/personal-home/* ~ && sudo chmod -R 755 /personal-twist/personal-root/* && sudo cp -Rf /personal-twist/personal-root/* /'
+
+homesettings() {
+    sudo cp -Rf /boot/grub/themes/Vimix/background.png /personal-twist/standard-root/boot/grub/themes/Vimix/
+    sudo cp -Rf /usr/share/icons/default/* /personal-twist/standard-root/usr/share/icons/default/
+    sudo cp -Rf ~/.config/gtk*3.0/settings.ini /personal-twist/standard-home/.config/gtk-3.0/*
+    sudo cp -Rf ~/.config/arcologout/* /personal-twist/standard-home/.config/arcologout/
+    sudo cp -Rf /etc/sddm.conf /personal-twist/standard-root/etc/
+    sudo chmod -R 755 /personal-twist/personal-home/* 
+    cp -Rf /personal-twist/personal-home/* ~ 
+    sudo chmod -R 755 /personal-twist/personal-root/* 
+    sudo cp -Rf /personal-twist/personal-root/* / 
+}
+alias mine=homesettings
+
 #########################################################################################
 #########################################################################################
 
 #########################################################################################
-#########This will reset ArcolinuxB-i3 to its standard settings#########################
+#########This will reset ArcolinuxB-i3 to its standard settings##########################
 #########################################################################################
-alias superskel='sudo chmod -R 755 /personal-twist/standard-home/* && cp -Rf /personal-twist/standard-home/* ~ && sudo chmod -R 755 /personal-twist/standard-root/* && sudo cp -Rf /personal-twist/standard-root/* /'
+
+standardsettings() {
+    sudo chmod -R 755 /personal-twist/standard-home/*
+    cp -Rf /personal-twist/standard-home/* ~
+    sudo chmod -R 755 /personal-twist/standard-root/*
+    sudo cp -Rf /personal-twist/standard-root/* /
+}
+alias standard=standardsettings
+
 ##########################################################################################
-#########################################################################################
+##########################################################################################
 
 alias edubois='youtube-dl --download-archive ~/Videos/edubois.txt -f best -citw -v https://www.youtube.com/ErikDubois'
