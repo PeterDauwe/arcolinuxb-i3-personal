@@ -172,40 +172,23 @@ echo
 		rm ../work/archiso/airootfs/personal/.gitkeep
     fi
 
+
+############################################################################    
 ############################################################################
+#########################Add personalized folder############################
+############################################################################
+############################################################################
+	echo "Adding the content of the personal-twist folder"
+	echo
+	cp -rf ../personal-twist/ ../work/archiso/airootfs/
+	if test -f ../work/archiso/airootfs/personal-twist/.gitkeep ; then
+		echo ".gitkeep is now removed"
+		echo
+		rm ../work/archiso/airootfs/personal-twist/.gitkeep
+    fi
 ############################################################################
 ############################################################################
 ############################################################################    
-############################################################################
-# Added personalized########################################################
-	echo "Adding the content of the /personal-home folder"
-	echo
-	cp -rf ../personal-home/ ../work/archiso/airootfs/
-	if test -f ../work/archiso/airootfs/personal-home/.gitkeep ; then
-		echo ".gitkeep is now removed"
-		echo
-		rm ../work/archiso/airootfs/personal-home/.gitkeep
-    fi
-
-	echo "Adding the content of the /personal-root folder"
-	echo
-	cp -rf ../personal-root/ ../work/archiso/airootfs/
-	if test -f ../work/archiso/airootfs/personal-root/.gitkeep ; then
-		echo ".gitkeep is now removed"
-		echo
-		rm ../work/archiso/airootfs/personal-root/.gitkeep
-    fi
-
-	echo "Adding the content of the /personal-reset folder"
-	echo
-	cp -rf ../personal-root/ ../work/archiso/airootfs/
-	if test -f ../work/archiso/airootfs/personal-reset/.gitkeep ; then
-		echo ".gitkeep is now removed"
-		echo
-		rm ../work/archiso/airootfs/personal-reset/.gitkeep
-    fi
-
-
 ############################################################################
 ############################################################################
 
@@ -241,16 +224,16 @@ echo
 	echo
 	echo "Copying the new packages.x86_64 file to the build folder"
 	cp -f ../archiso/packages.x86_64 $buildFolder/archiso/packages.x86_64
-############################################################################
-############################################################################
-############################################################################
-############################################################################
-
 
 ############################################################################
 ############################################################################
-#Added personal.x86_64 to append into packages.x86_64#######################
+###########Add personalsoftware.x86_64 into packages.x86_64#################
+############################################################################
+############################################################################
     cat ../archiso/personalsoftware.x86_64 >> $buildFolder/archiso/packages.x86_64
+############################################################################
+############################################################################
+############################################################################
 ############################################################################
 ############################################################################
 

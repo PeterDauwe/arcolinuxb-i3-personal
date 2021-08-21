@@ -25,11 +25,18 @@ alias vbmessage='VBoxManage setextradata global GUI/SuppressMessages "all"'
 
 alias scr='xdotool windowminimize $(xdotool getactivewindow) && scrot -d 3 -c ~/Pictures/Scrot-$(date +%Y.%m.%d-%H.%M.%S).jpg' 
 
-alias personal-home='sudo chmod -R 755 /personal-home/* && cp -Rf /personal-home/* ~'
-alias personal-root='sudo chmod -R 755 /personal-root/* && sudo cp -Rf /personal-root/* /'
+#########################################################################################
+##### This will copy all your personal settings into place ##############################
+#########################################################################################
+alias home='sudo chmod -R 755 /personal-twist/personal-home/* && cp -Rf /personal-twist/personal-home/* ~ && sudo chmod -R 755 /personal-twist/personal-root/* && sudo cp -Rf /personal-twist/personal-root/* /'
+#########################################################################################
+#########################################################################################
 
-
-alias resetskel1='sudo chmod -R 755 /personal-reset/reset-home/* && cp -Rf /personal-reset/reset-home/* ~'
-alias resetskel2='sudo chmod -R 755 /personal-reset/reset-root/* && sudo cp -Rf /personal-reset/reset-root/* /'
+#########################################################################################
+#########This will reset ArcolinuxB-i3 to its standard settings#########################
+#########################################################################################
+alias superskel='sudo chmod -R 755 /personal-twist/standard-home/* && cp -Rf /personal-twist/standard-home/* ~ && sudo chmod -R 755 /personal-twist/standard-root/* && sudo cp -Rf /personal-twist/standard-root/* /'
+##########################################################################################
+#########################################################################################
 
 alias edubois='youtube-dl --download-archive ~/Videos/edubois.txt -f best -citw -v https://www.youtube.com/ErikDubois'
