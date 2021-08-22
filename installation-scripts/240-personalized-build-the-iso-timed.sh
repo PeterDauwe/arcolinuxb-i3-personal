@@ -259,8 +259,14 @@ echo
 	oldname2='iso_label="arcolinuxl-'$arcolinuxVersion
 	newname2='iso_label="arcolinuxtwist-'$desktop'-v'$TwistVersion
 
+	oldname2b='iso_version="'$arcolinuxVersion
+	newname2b='iso_version="v'$TwistVersion
+
 	oldname3='ArcoLinuxL'
 	newname3='ArcoLinuxTwist-'$desktop
+
+	oldname3b='ISO_RELEASE='$arcolinuxVersion
+	newname3b='ISO_RELEASE=v'$TwistVersion
 
 	#hostname
 	oldname4='ArcoLinuxL'
@@ -274,7 +280,9 @@ echo
 	echo
 	sed -i 's/'$oldname1'/'$newname1'/g' $buildFolder/archiso/profiledef.sh
 	sed -i 's/'$oldname2'/'$newname2'/g' $buildFolder/archiso/profiledef.sh
+	sed -i 's/'$oldname2b'/'$newname2b'/g' $buildFolder/archiso/profiledef.sh
 	sed -i 's/'$oldname3'/'$newname3'/g' $buildFolder/archiso/airootfs/etc/dev-rel
+	sed -i 's/'$oldname3b'/'$newname3b'/g' $buildFolder/archiso/airootfs/etc/dev-rel
 	sed -i 's/'$oldname4'/'$newname4'/g' $buildFolder/archiso/airootfs/etc/hostname
 	sed -i 's/'$oldname5'/'$newname5'/g' $buildFolder/archiso/airootfs/etc/sddm.conf.d/kde_settings.conf
 	#bios
