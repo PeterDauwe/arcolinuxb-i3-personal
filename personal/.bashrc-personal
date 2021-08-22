@@ -16,18 +16,11 @@ alias scr='scrot -d 3 -c ~/Pictures/Scrot-$(date +%Y.%m.%d-%H.%M.%S).jpg'
 #########################################################################################
 
 homesettings() {
-    sudo cp -Rf /boot/grub/themes/Vimix/theme.txt /personal-twist/standard-root/boot/grub/themes/Vimix/
-    sudo cp -Rf /usr/share/icons/default/* /personal-twist/standard-root/usr/share/icons/default/
-        
-    if [ -d ~q/.config/arcologout/ ]; then
-      # Take action if DIR exists. #
-      sudo cp -Rf ~/.config/arcologout/* /personal-twist/standard-home/.config/arcologout/
-    fi
-
     sudo chmod -R 755 /personal-twist/personal-home/* 
     cp -Rf /personal-twist/personal-home/* ~ 
     sudo chmod -R 755 /personal-twist/personal-root/* 
     sudo cp -Rf /personal-twist/personal-root/* / 
+    echo 'All your personal configs , cursors , backgrounds... are in place. Now log out to activate them.' 
 }
 alias mine=homesettings
 
@@ -41,9 +34,9 @@ alias mine=homesettings
 standardsettings() {
     sudo cp -rf /etc/skel/* ~
     sudo cp -Rf /personal-twist/standard-home/.config/arcologout/* ~/.config/arcologout/
-    
     sudo chmod -R 755 /personal-twist/standard-root/*
     sudo cp -Rf /personal-twist/standard-root/* /
+    echo 'All the standard settings are back in place. Now log out to activate them.'    
 }
 alias standard=standardsettings
 
