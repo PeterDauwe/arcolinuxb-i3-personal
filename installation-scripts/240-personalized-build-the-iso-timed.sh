@@ -51,8 +51,8 @@ echo
 
 	# setting of the general parameters
 	archisoRequiredVersion="archiso 57-2"
-	buildFolder=$HOME"/arcolinuxb-build"
-	outFolder=$HOME"/ArcoLinuxB-Out"
+	buildFolder=$HOME"/arcolinuxtwist-build"
+	outFolder=$HOME"/ArcoLinuxTwist-Out"
 	archisoVersion=$(sudo pacman -Q archiso)
 
 	echo "################################################################## "
