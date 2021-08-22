@@ -45,9 +45,12 @@ echo
 	desktop="i3"
 	dmDesktop="i3"
 
-	arcolinuxVersion=$(date +%y)-$(date +%m)-$(date +%d)
+	TwistVersion=$(date +%y).$(date +%m).$(date +%d)
 
-	isoLabel='arcolinuxtwist-'$desktop'-'$arcolinuxVersion'-x86_64.iso'
+	arcolinuxVersion='v21.09.10'
+
+
+	isoLabel='arcolinuxtwist-'$desktop'-'$TwistVersion'-x86_64.iso'
 
 	# setting of the general parameters
 	archisoRequiredVersion="archiso 57-2"
@@ -253,15 +256,15 @@ echo
 	oldname1='iso_name="arcolinuxl'
 	newname1='iso_name="arcolinuxtwist-'$desktop
 
-	oldname2='iso_label="arcolinuxl'
-	newname2='iso_label="arcolinuxtwist-'$desktop
+	oldname2='iso_label="arcolinuxl-'$arcolinuxVersion
+	newname2='iso_label="arcolinuxtwist-'$desktop'-v'$TwistVersion
 
 	oldname3='ArcoLinuxL'
 	newname3='ArcoLinuxTwist-'$desktop
 
 	#hostname
 	oldname4='ArcoLinuxL'
-	newname4='ArcoLinuxB-'$desktop
+	newname4='ArcoLinuxTwist-'$desktop
 
 	#sddm.conf user-session
 	oldname5='Session=xfce'
