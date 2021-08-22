@@ -28,14 +28,14 @@ alias scr='xdotool windowminimize $(xdotool getactivewindow) && scrot -d 3 -c ~/
 #########################################################################################
 ##### This will copy all your personal settings into place ##############################
 #########################################################################################
-homesettings() {
+customsettings() {
     sudo chmod -R 755 /personal-twist/personal-home/* 
     cp -Rf /personal-twist/personal-home/* ~ 
     sudo chmod -R 755 /personal-twist/personal-root/* 
     sudo cp -Rf /personal-twist/personal-root/* / 
     echo 'All your personal configs , cursors , backgrounds... are in place. Now log out to activate them.'    
 }
-alias mine=homesettings
+alias custom=customsettings
 #########################################################################################
 #########################################################################################
 
