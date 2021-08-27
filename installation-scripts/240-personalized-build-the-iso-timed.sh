@@ -53,7 +53,7 @@ echo
 	isoLabel='arcolinuxtwist-'$desktop'-'$TwistVersion'-x86_64.iso'
 
 	# setting of the general parameters
-	archisoRequiredVersion="archiso 57-2"
+	archisoRequiredVersion="archiso 58-1"
 	buildFolder=$HOME"/arcolinuxtwist-build"
 	outFolder=$HOME"/ArcoLinuxTwist-Out"
 	archisoVersion=$(sudo pacman -Q archiso)
