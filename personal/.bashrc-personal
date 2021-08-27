@@ -16,10 +16,13 @@ alias scr='scrot -d 3 -c ~/Pictures/Scrot-$(date +%Y.%m.%d-%H.%M.%S).jpg'
 #########################################################################################
 
 customsettings() {
-    sudo chmod -R 755 /personal-twist/personal-home/* 
-    cp -Rf /personal-twist/personal-home/* ~ 
-    sudo chmod -R 755 /personal-twist/personal-root/* 
-    sudo cp -Rf /personal-twist/personal-root/* / 
+    sudo chmod -R 755 /personal-twist/personal-home/*
+    cp -Rf /personal-twist/personal-home/* ~
+    sudo chmod -R 755 /personal-twist/personal-root/*
+    sudo cp -Rf /personal-twist/personal-root/* /
+    sed -i -e 's/neofetch/sfetch/g' .bashrc
+    sed -i -e 's/neofetch/sfetch/g' .zshrc
+    sed -i -e 's/="random"/="Lastbobo"/g' .zshrc
     echo 'All your personal configs , cursors , backgrounds... are in place. Now log out to activate them.' 
 }
 alias custom=customsettings
