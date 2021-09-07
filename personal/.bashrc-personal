@@ -23,6 +23,7 @@ customsettings() {
     sed -i -e 's/neofetch/sfetch/g' .bashrc
     sed -i -e 's/neofetch/sfetch/g' .zshrc
     sed -i -e 's/="random"/="Lastbobo"/g' .zshrc
+    sudo chsh $USER -s /bin/zsh
     echo 'All your personal configs , cursors , backgrounds... are in place. Now log out to activate them.' 
 }
 alias custom=customsettings
@@ -48,3 +49,4 @@ alias standard=standardsettings
 
 
 alias edubois='youtube-dl --download-archive ~/Videos/edubois.txt -f best -citw -v https://www.youtube.com/ErikDubois'
+alias redubois='youtube-dl --playlist-reverse --download-archive ~/Videos/edubois.txt -f best -ciw -o "%(upload_date)s - %(title)s.%(ext)s" -v https://www.youtube.com/ErikDubois'
