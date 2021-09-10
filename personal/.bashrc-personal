@@ -14,7 +14,6 @@ alias scr='scrot -d 3 -c ~/Pictures/Scrot-$(date +%Y.%m.%d-%H.%M.%S).jpg'
 #########################################################################################
 ##### This will copy all your personal settings into place ##############################
 #########################################################################################
-
 customsettings() {
     sudo chmod -R 755 /personal-twist/personal-home/*
     cp -Rf /personal-twist/personal-home/* ~
@@ -40,13 +39,17 @@ standardsettings() {
     sudo cp -Rf /personal-twist/standard-home/.config/arcologout/* ~/.config/arcologout/
     sudo chmod -R 755 /personal-twist/standard-root/*
     sudo cp -Rf /personal-twist/standard-root/* /
+    sed -i -e 's/sfetch/neofetch/g' .bashrc
+    sed -i -e 's/sfetch/neofetch/g' .zshrc
+    sudo chsh $USER -s /bin/bash
+    sed -i -e 's/="Lastbobo"/="random"/g' .zshrc
     echo 'All the standard settings are back in place. Now log out to activate them.'    
 }
 alias standard=standardsettings
-
 ##########################################################################################
 ##########################################################################################
 
 
 alias edubois='youtube-dl --download-archive ~/Videos/edubois.txt -f best -citw -v https://www.youtube.com/ErikDubois'
 alias redubois='youtube-dl --playlist-reverse --download-archive ~/Videos/edubois.txt -f best -ciw -o "%(upload_date)s - %(title)s.%(ext)s" -v https://www.youtube.com/ErikDubois'
+alias nick='youtube-dl --download-archive ~/Videos/nicklogo.txt -f best -citw -v https://www.youtube.com/LogosByNick'
