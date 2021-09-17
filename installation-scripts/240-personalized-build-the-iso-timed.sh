@@ -47,7 +47,7 @@ echo
 
 	TwistVersion=$(date +%y).$(date +%m).$(date +%d)
 
-	arcolinuxVersion='v21.09.10'
+	arcolinuxVersion='v21.11.1'
 
 
 	isoLabel='arcolinuxtwist-'$desktop'-'$TwistVersion'-x86_64.iso'
