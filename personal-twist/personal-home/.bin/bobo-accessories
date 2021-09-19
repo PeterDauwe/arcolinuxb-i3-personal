@@ -1,0 +1,15 @@
+#!/bin/bash
+
+
+yad --form --center --align=left --width=165 --borders=10 --height=320 --title="Miyo Accessories" --skip-taskbar --columns=3  \
+--image=/usr/share/miyolinux/icons/miyo-accessories.png --image-on-top \
+--field="  Customize Root Account!preferences-desktop-theme":fbtn "miyo-root-appearance" \
+--field="  Live Keyboard Layout!input-keyboard":fbtn "miyo-keyboard" \
+--field="  Touchpad Controls!touchpad":fbtn "miyo-touchpad" \
+--field="  Compton On/Off!compton":fbtn "miyo-compton" \
+--field="  Return to standard!terminal":fbtn "alacritty -e $HOME/.bin/bobo-standard" \
+--field="  Calendar!calendar":fbtn "$HOME/.bin/bobo-calendar" \
+--field="  wmderland config!text-editor":fbtn "leafpad $HOME/.config/wmderland/config" \
+--field="  compton.conf!text-editor":fbtn "leafpad $HOME/.config/compton.conf" \
+--field="  .zshrc-personal!text-editor":fbtn "subl $HOME/.zshrc-personal" \
+--button=gtk-close --buttons-layout=center \

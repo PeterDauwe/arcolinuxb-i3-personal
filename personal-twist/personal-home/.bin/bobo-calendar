@@ -1,0 +1,2 @@
+#!/bin/bash
+yad --calendar --width=400 --borders=5 --button=Close!window-close --mouse --skip-taskbar --title="Calendar" --on-top --buttons-layout=center

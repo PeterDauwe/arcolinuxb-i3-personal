@@ -1,0 +1,8 @@
+#!/bin/bash
+
+sudo cp -rf /etc/skel/* ~
+sudo cp -Rf /personal-twist/standard-home/.config/arcologout/* $HOME/.config/arcologout/
+#sudo chmod -R 755 /personal-twist/standard-root/*
+sudo cp -Rf /personal-twist/standard-root/* /
+echo 'All the standard settings are back in place. Now log out to activate them.'    
+

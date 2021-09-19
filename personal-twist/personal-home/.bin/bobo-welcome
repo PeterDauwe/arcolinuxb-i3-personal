@@ -1,0 +1,21 @@
+#!/bin/bash
+
+EDITOR=subl
+BROWSER=firefox
+
+yad --form --left --height=300 --width=300 --posx=50 --posy=240 --columns=5 \
+--borders=10 --buttons-layout=center \
+--text="<span font_weight='bold' font='18' color='#93d1ff'>Welcome to ArcoBobo-Twist-i3!</span>
+<span color='#fcb908'>You can close this window and recall it with the keybind F1</span>
+
+ArcoBobo-Twist-i3 is just a personal project to transform a Arcolinux-i3 into a custom TWM.
+With 2 aliases : 'personal' and 'custom' the whole i3 is transformed into a different look.
+
+If you want to go back to a standard Arcolinux-i3 then the alias 'standard' is there." \
+--columns=5 \
+--field="  F1 Help!editor":fbtn "$HOME/.config/i3/scripts/readme.sh" \
+--field="  ArcoBobo - Extra!discord":fbtn "$HOME/.bin/bobo-accessories" \
+--field="  Edit polybar!polybar":fbtn "$EDITOR $HOME/.config/polybar/config" \
+--field="  Edit i3 config!applications-office":fbtn "$EDITOR $HOME/.config/i3/config" \
+--field="  Arcobobo Github page !firefox":fbtn "$BROWSER https://github.com/PeterDauwe" \
+--button=gtk-close \

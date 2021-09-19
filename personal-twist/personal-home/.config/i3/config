@@ -323,7 +323,7 @@ assign [class="Spotify|spotify|discord|Discord"]                                
 # USER APPLICATIONS TO START AT BOOT
 
 # ArcoLinux Welcome App
-exec --no-startup-id dex $HOME/.config/autostart/arcolinux-welcome-app.desktop
+#exec --no-startup-id dex $HOME/.config/autostart/arcolinux-welcome-app.desktop
 
 # Autotiling
 exec_always --no-startup-id autotiling
@@ -406,7 +406,7 @@ exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd &
 
 # not workspace related
 
-bindsym F1 exec --no-startup-id groff -mom ${XDG_DATA_HOME:-$HOME/.config/i3}/scripts/readme.first -Tpdf | zathura -
+#bindsym F1 exec --no-startup-id groff -mom ${XDG_DATA_HOME:-$HOME/.config/i3}/scripts/readme.first -Tpdf | zathura -
 
 bindsym Mod1+l exec --no-startup-id ~/.config/i3/scripts/blurlock.sh &
 bindsym $mod+control+m exec --no-startup-id ~/.config/i3/scripts/manpages.sh &
@@ -422,7 +422,7 @@ bindsym control+mod1+n exec alacritty -e mc
 bindsym Control+mod1+c exec wal -i "/usr/share/backgrounds/noobie" && ~/.config/i3/scripts/startconky.sh
 
 # ArcoLinux Welcome App
-bindsym control+mod1+w exec --no-startup-id arcolinux-welcome-app
+bindsym F1 exec --no-startup-id ~/.bin/bobo-welcome
 
 # ArcoLinux Tweak Tool
 bindsym control+mod1+e exec --no-startup-id arcolinux-tweak-tool
@@ -567,7 +567,7 @@ for_window [class="Xfce4-appfinder"] floating enable
 for_window [class="Xfce4-settings-manager"] floating disable
 for_window [class="Xfce4-taskmanager"] floating enable
 for_window [class="Yad"] floating enable
-
+for_window [class="Zathura"] floating enable resize set 1300 1000, move position center
 # for_window [instance="gimp"] floating disable
 for_window [instance="script-fu"] border normal
 for_window [instance="variety"] floating disable
