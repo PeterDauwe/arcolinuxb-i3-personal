@@ -45,12 +45,11 @@ echo
 	desktop="i3"
 	dmDesktop="i3"
 
+	arcolinuxVersion='v21.11.02'
+
 	TwistVersion=$(date +%y).$(date +%m).$(date +%d)
 
-	arcolinuxVersion='v21.11.1'
-
-
-	isoLabel='arcolinuxtwist-'$desktop'-'$TwistVersion'-x86_64.iso'
+isoLabel='arcolinuxtwist-'$desktop'-'$TwistVersion'-x86_64.iso'
 
 	# setting of the general parameters
 	archisoRequiredVersion="archiso 58-1"
