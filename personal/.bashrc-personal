@@ -2,11 +2,25 @@
 # ~/.bashrc
 #
 
+(cat "$HOME/.cache/wal/sequences" &)
 
+#git clone
 alias gc="git clone"
 
 alias gitpull="find . -maxdepth 3 -name .git -type d | rev | cut -c 6- | rev | xargs -I {} git -C {} pull"
 
+gitpush() {
+    git pull
+    git add -u
+    git add --all .
+    input="update"
+    git commit -m "$input"
+    git push --force -u origin master
+}
+alias gp=gitpush
+
+
+#No messages in virtualbox
 alias vbmessage='VBoxManage setextradata global GUI/SuppressMessages "all"'
 
 alias scr='scrot -d 3 -c ~/Pictures/Scrot-$(date +%Y.%m.%d-%H.%M.%S).jpg'
@@ -26,14 +40,12 @@ customsettings() {
     echo 'All your personal configs , cursors , backgrounds... are in place. Now log out to activate them.' 
 }
 alias custom=customsettings
-
 #########################################################################################
 #########################################################################################
 
 #########################################################################################
 #########This will reset ArcolinuxB-i3 to its standard settings##########################
 #########################################################################################
-
 standardsettings() {
     sudo cp -rf /etc/skel/* ~
     sudo cp -Rf /personal-twist/standard-home/.config/arcologout/* ~/.config/arcologout/
@@ -48,3 +60,6 @@ standardsettings() {
 alias standard=standardsettings
 ##########################################################################################
 ##########################################################################################
+
+alias edubois='youtube-dl --download-archive ~/Videos/edubois.txt -f best -citw -v https://www.youtube.com/ErikDubois'
+alias redubois='youtube-dl --playlist-reverse --download-archive ~/Videos/edubois.txt -f best -ciw -o "%(upload_date)s - %(title)s.%(ext)s" -v https://www.youtube.com/ErikDubois'
