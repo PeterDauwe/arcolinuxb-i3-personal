@@ -1,2 +1,2 @@
-# ArcoLinuxB-i3-personalized desktop
+# ArcoTwist-i3-personalized desktop
 
