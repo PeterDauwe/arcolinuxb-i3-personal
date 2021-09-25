@@ -115,7 +115,7 @@ border-right-size = 15%
 ;border-color = ${colors.background}
 ;border-top-size = 0
 ;border-bottom-size = 25
-border-color = #000000
+border-color = #00000000
 
 padding-left = 3%
 padding-right = 3%
