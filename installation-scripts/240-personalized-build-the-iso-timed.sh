@@ -45,7 +45,7 @@ echo
 	desktop="i3"
 	dmDesktop="i3"
 
-	arcolinuxVersion='v21.11.02'
+	arcolinuxVersion='v21.11.03'
 
 	TwistVersion=$(date +%y).$(date +%m).$(date +%d)
 
