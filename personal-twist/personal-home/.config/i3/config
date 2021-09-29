@@ -384,19 +384,15 @@ exec_always --no-startup-id numlockx on
 
 # Conky
 # exec --no-startup-id conky -c ~/.config/i3/system-overview
+exec_always --no-startup-id ~/.config/i3/scripts/startconky.sh
 
 # feh sets wallpaper
 # exec --no-startup-id feh --bg-fill /usr/share/backgrounds/arcolinux/arco-wallpaper.jpg &
 # exec --no-startup-id feh --bg-fill /usr/share/backgrounds/noobie/noobie-wallpaper.jpg &
-
+exec --no-startup-id wal -i "/usr/share/backgrounds/noobie" &
 
 # Polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh &
-
-exec --no-startup-id wal -i "/usr/share/backgrounds/noobie" &
-exec_always --no-startup-id ~/.config/i3/scripts/startconky.sh &
-
-
 
 ################# system applications       
 
