@@ -109,8 +109,8 @@ col9=${color9:1:8}
 col10=${color10:1:8}
 col15=${color15:1:8}
 
-echo '${goto 270}''${font mono:Bold:size=10}'$TOPLINE | sed 's/Su/${color '$col7'}Su${color}/g' | sed 's/Sa/${color '$col7'}Sa${color}/g'
-echo '${goto 270}''${font mono:bold:size=10}''${color '$col2'}'$OVER '${color '$col5'}'$TODAY'${color '$col7'}'$REST'${color '$col7'}${voffset -40}'
+echo '${goto 270}''${font mono:Bold:size=10}'$TOPLINE | sed 's/Su/${color '$col2'}Su${color}/g' | sed 's/Sa/${color '$col2'}Sa${color}/g'
+echo '${goto 270}''${font mono:bold:size=10}''${color '$col2'}'$OVER '${color '$col4'}'$TODAY'${color '$col7'}'$REST'${color '$col7'}${voffset -40}'
 echo '${goto 46}${font Caviar Dreams:bold:size=18}${time %A}${font Caviar Dreams:bold:size=40}${goto 175} ${color '$col7'}${voffset 0}${time %d}$color'
 echo '${color '$col7'}${voffset -50}${font Caviar Dreams:bold:size=24}${goto 46}${time %b}${font Caviar Dreams:bold:size=16}${goto 128}${color '$col7'}${voffset 0}${time %Y}$color'
 
