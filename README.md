@@ -1,2 +1,2 @@
-# ArcoTwist-i3-personalized desktop
+# Twist-i3-personalized desktop
 
